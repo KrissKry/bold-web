@@ -4,6 +4,8 @@ import "./button.css";
  * 
  * @param bold if text should have weight=600 applied 
  * 
+ * @param border if button should have applied border
+ *  
  * @param className general classname(s) to be applied to button
  * 
  * @param disabled
@@ -48,10 +50,11 @@ import "./button.css";
  */
 const Button = ({
     bold = false,
+    border = true,
     className = "",
     disabled = false,
-    download = "",
-    fit = false,
+    download,
+    fit = true,
     hover = false,
     href = "",
     Icon,
@@ -92,6 +95,7 @@ const Button = ({
         secondary ? "secondary" : "",
         fit ? "fit-content" : "",
         hover ? "hover" : "",
+        !border ? "noborder" : "",
         buttonFlexClass,
         size,
         className,
