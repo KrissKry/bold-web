@@ -4,12 +4,15 @@
   border-radius: .6rem;
   height: 6rem;
   border: 1px solid #333;
-  padding: 2rem 3rem;
   font-size: 1.6rem;
-  margin: 2.4rem 0;
+  margin: 0.75rem 1.5rem;
+  padding: 0 1.938rem;
+  padding-top: 1.313rem;
+  padding-bottom: 1.25rem;
 
   &::placeholder {
     color: #132743;
+    opacity: 0.5;
   }
 }
 

@@ -1,5 +1,7 @@
 import React from 'react'
 import './App.css'
+import './common/index.common.css';
+
 import TopBar from './components/topBar'
 import Intro from './sections/intro'
 import Features from './sections/features'
