@@ -1,0 +1,95 @@
+.contact {
+    min-height: 30rem;
+	height: fit-content;
+	background-color: #fff;
+
+	.container {
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+		max-width: 111rem;
+		margin: 0 auto;
+
+		.content {
+			width: 100%;
+
+			.info {
+				width: 100%;
+
+				.heading {
+					margin-bottom: 3.75rem;
+				}	
+
+				.text {
+					width: 434px;
+					line-height: 20px;
+				}
+			}
+
+			.form {
+				width: 100%;
+				
+			}
+			
+		}
+	
+		@media screen and (max-width: 75rem) {
+			max-width: fit-content;
+
+			.formInput {
+				&-half {
+					width: 20rem;
+				}
+
+				&-full {
+					width: 43rem;
+				}
+			}
+		}
+
+		@media screen and (max-width: 58rem) {
+			.content {
+				flex-direction: column;
+				max-width: 46rem;
+
+				.form {
+					margin-top: 2rem;
+				}
+
+				.info {
+					text-align: center;
+				}
+			}
+
+		}
+
+		@media screen and (max-width: 35rem) {
+			width: 100%;
+
+			.content {
+				padding: 0 1.5rem;
+				.names {
+					flex-direction: column;
+				}
+				
+				.formInput {
+					margin-left: 0;
+					margin-right: 0;
+					&-half {
+						width: 100%;
+					}
+	
+					&-full {
+						width: 100%;
+					}
+				}
+
+				.info {
+					.text {
+						width: 100%;
+					}
+				}
+			}
+		}
+		
+	}
+}
