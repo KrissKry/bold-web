@@ -7,20 +7,22 @@ import './index.css'
  * @param className String for additional css classes. DEFAULT=""
  * @param full If the input should have full width by design or half. DEFAULT=false 
  * @param onKeyDown Function to react to input change (for example for text formatting of phone number)
+ * @param maxLength Maximum allowed length of the input
  * @returns FormInput component
  */
 const FormInput = ({
 	type = "text",
 	name,
 	value,
-	onChange = function (){},
+	onChange = () => {},
 	placeholder = "",
 	required = false,
 	disabled = false,
 	full = false,
 	className = "",
 	pattern,
-	onKeyDown = function (){},
+	onKeyDown = () => {},
+	maxLength,
 }) => {
 
 	const formStyle = full === true 
@@ -40,6 +42,7 @@ const FormInput = ({
 		disabled={disabled}
 		onKeyDown={onKeyDown}
 		pattern={pattern}
+		maxLength={maxLength}
 		/>
 	);
 };

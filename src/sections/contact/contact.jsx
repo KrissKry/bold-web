@@ -37,7 +37,7 @@ const Contact = () => {
 		setFormData(newFormData);
 	}
 
-	/** Checks if phone number matches 8-10 digits. Very simple & needs further work to include country codes or american ( ) */
+	/** Checks if phone number matches at least once 8-10 digits. Very simple & needs further work to include country codes or american ( ), limiter */
 	const validatePhoneNumber = (number) => new RegExp("(?=.{8,10}$)[0-9]{8,10}$").test(number);
 	
 	const onSubmit = (e) => {
@@ -50,9 +50,10 @@ const Contact = () => {
 				hasError: true,
 				error: "Incorrect phone number. 8-10 digits only",
 			})
+			return;
 		}
 
-		console.log("[E] Submit Event", formData);
+		console.log("[I] Submit Event", formData);
 		// @to-do: add code for sending data
 	}
 
@@ -63,7 +64,9 @@ const Contact = () => {
 					<div className="flex column info">
 						<Heading className="heading" level={2}>Contact</Heading>
 
-						<Text className="text w400" size={14}>Questions or concerns? Just fill out the form below and our support team will get back to you within 24 hours</Text>
+						<Text className="text w400" size={14}>
+							Questions or concerns? Just fill out the form below and our support team will get back to you within 24 hours
+						</Text>
 					</div>
 
 					<form className="flex column form" onSubmit={onSubmit}>
@@ -93,6 +96,7 @@ const Contact = () => {
 							required
 							placeholder="Phone Number"
 							onChange={handleChange}
+							maxLength={10}
 							
 						/>
 						<FormInput 
@@ -113,12 +117,13 @@ const Contact = () => {
 						
 						<Button 
 							type="submit"
-							className="submit"
+							className="submit al-c"
 							primary
 							text="submit now"
 							uppercase
 							size="large"
 							fit
+							hover
 						/>
 					</form>
 				</div>
