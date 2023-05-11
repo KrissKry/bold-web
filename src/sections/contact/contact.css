@@ -28,6 +28,10 @@
 			.form {
 				width: 100%;
 				
+
+				.submit {
+					margin: 1rem 1.5rem;
+				}
 			}
 			
 		}
@@ -67,25 +71,33 @@
 
 			.content {
 				padding: 0 1.5rem;
+
 				.names {
 					flex-direction: column;
-				}
-				
-				.formInput {
-					margin-left: 0;
-					margin-right: 0;
-					&-half {
-						width: 100%;
-					}
-	
-					&-full {
-						width: 100%;
-					}
 				}
 
 				.info {
 					.text {
 						width: 100%;
+					}
+				}
+
+				.form {
+					.formInput {
+						margin-left: 0;
+						margin-right: 0;
+
+						&-half {
+							width: 100%;
+						}
+		
+						&-full {
+							width: 100%;
+						}
+					}
+
+					.submit {
+						margin: 1rem auto;
 					}
 				}
 			}

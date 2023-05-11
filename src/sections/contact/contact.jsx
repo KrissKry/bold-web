@@ -1,27 +1,29 @@
-import { useEffect, useState } from 'react';
-import FormInput from '../../components/formInput';
-import Heading from '../../components/heading';
-import Text from '../../components/text';
-import './contact.css';
+import { useState } from "react";
+import FormInput from "../../components/formInput";
+import Heading from "../../components/heading";
+import Text from "../../components/text";
+import Button from "../../components/button";
+
+import "./contact.css";
 
 const Contact = () => {
 	const formFields = {
-		name: 'name',
-		lastname: 'lastname',
-		phone: 'phone',
-		message: 'message',
+		name: "name",
+		lastname: "lastname",
+		phone: "phone",
+		message: "message",
 	};
 
 	const [submitError, setSubmitError] = useState({
 		hasError: false,
-		error: '',
+		error: "",
 	});
 	
 	const [formData, setFormData] = useState({
-		name: '',
-		lastname: '',
-		phone: '',
-		message: '',
+		name: "",
+		lastname: "",
+		phone: "",
+		message: "",
 	});
 
 	const handleChange = (e) => {
@@ -36,21 +38,22 @@ const Contact = () => {
 	}
 
 	/** Checks if phone number matches 8-10 digits. Very simple & needs further work to include country codes or american ( ) */
-	const validatePhoneNumber = (number) => new RegExp('(?=.{8,10}$)[0-9]{8,10}$').test(number);
+	const validatePhoneNumber = (number) => new RegExp("(?=.{8,10}$)[0-9]{8,10}$").test(number);
 	
 	const onSubmit = (e) => {
 		e.preventDefault();
 
-		setSubmitError({ hasError: false, error: '' });
+		setSubmitError({ hasError: false, error: "" });
 
 		if (!validatePhoneNumber(formData.phone)) {
 			setSubmitError({
 				hasError: true,
-				error: 'Incorrect phone number. 8-10 digits only',
+				error: "Incorrect phone number. 8-10 digits only",
 			})
 		}
 
-		// to-do: add code for sending data
+		console.log("[E] Submit Event", formData);
+		// @to-do: add code for sending data
 	}
 
   	return (
@@ -108,7 +111,15 @@ const Contact = () => {
 							</Text>
 						)}
 						
-						<button type="submit" className='margin-v1'>submit</button>
+						<Button 
+							type="submit"
+							className="submit"
+							primary
+							text="submit now"
+							uppercase
+							size="large"
+							fit
+						/>
 					</form>
 				</div>
 			</div>
