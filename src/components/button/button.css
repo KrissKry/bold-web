@@ -3,11 +3,13 @@
     border-radius: 6px;
     cursor: pointer;
     padding: 1.125rem 2.125rem;
+    text-decoration: none;
     transition: color 0.5s ease-in, background-color 0.4s ease-out;
 
     &.primary {
         color: white;
         background-color: #ED4C5C;
+        border: 2px solid #ED4C5C;
 
         &.hover {
             &:hover {
@@ -21,6 +23,7 @@
     &.secondary {
         color: #ED4C5C;
         background-color: white;
+        border: 2px solid white;
 
         &.hover {
             &:hover {
